@@ -1,0 +1,163 @@
+@import 'src/styles/variables.scss';
+
+
+.our-contacts {
+    display: flex;
+    column-gap: 180px;
+    row-gap: 25px;
+    flex-wrap: wrap;
+
+    @media (max-width: $medium) {
+        column-gap: 40px;
+        justify-content: space-between;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+
+        .col-item {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+            height: 30px;
+        }
+    }
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    align-items: center;
+
+    @media (max-width: 1100px) {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+    }
+
+    &__address {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        align-items: center;
+
+        img {
+            position: relative;
+            right: 35%;
+            width: 150%;
+
+            @media (max-width: $large) {
+                right: 0%;
+                width: 100%;
+            }
+
+            @media (max-width: 900px) {
+                right: 15%;
+                width: 130%;
+            }
+
+            @media (max-width: $small) {
+                right: 20%;
+                width: 140%;
+            }
+        }
+
+        .address-list {
+            grid-column: 2 / -1;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+            margin-bottom: 20px;
+            color: $text;
+        }
+
+        .form-fields {
+            display: flex;
+            flex-direction: column;
+            row-gap: 18px;
+        }
+
+        textarea::placeholder, textarea {
+            font: 400 14px/1.3 Manrope, sans-serif;
+        }
+
+        .help-text {
+            color: $green;
+            margin-top: 10px;
+        }
+
+    }
+    
+    .address-list {
+        .address-item h4 {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: $small) {
+
+            .address-item p {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.map-section {
+
+    .city-select select {
+        margin-bottom: 30px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+    }
+}
+
+.contacts {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.contacts .bg-beer {
+    position: absolute;
+    top: 8%;
+    right: -10%;
+    height: 770px;
+    z-index: -10;
+
+    @media (max-width: $large) {
+        right: -15%;
+        height: 600px;
+    }
+
+    @media (max-width: $medium) {
+        right: -20%;
+        height: 420px;
+        top: 8%;
+    }
+    
+    @media (max-width: $small) {
+        right: -40%;
+    }
+}

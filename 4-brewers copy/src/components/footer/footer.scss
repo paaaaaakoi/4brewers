@@ -1,0 +1,49 @@
+@import 'src/styles/variables.scss';
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    row-gap: 30px;
+    flex-wrap: wrap;
+
+    @media (max-width: 700px) {
+        flex-direction: column;
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        &.footer-contacts {
+            gap: 30px
+        }
+
+        &.footer-contacts p {
+            margin-bottom: 5px;
+        }
+    }
+
+    .footer-col-title {
+        margin-bottom: 20px;
+    }
+
+    .social-medias {
+        display: flex;
+        gap: 60px;
+
+        @media (max-width: $medium) {
+            gap: 30px;
+        }
+    }
+
+    .footer-logo {
+        width: 175px;
+        height: auto;
+        margin-bottom: 40px;
+
+        @media (max-width: 700px) {
+            margin-bottom: 0;
+        }
+    }
+}

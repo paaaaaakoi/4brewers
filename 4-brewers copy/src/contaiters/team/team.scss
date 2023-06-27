@@ -1,0 +1,94 @@
+@import 'src/styles/variables.scss';
+
+.team-section-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    .content-photos {
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+        gap: 10px;
+        justify-content: center;
+
+        @media (max-width: $medium) {
+            grid-template-columns: repeat(2, min-content);
+        }
+        @media (max-width: 640px) {
+            grid-template-columns: repeat(1, min-content);
+        }
+    }
+
+    .team-member {
+        position: relative;
+
+        .team-member__photo {
+            object-fit: cover;
+
+            @media (max-width: 1440px) {
+                width: 300px;
+                height: 290px;
+            }
+
+            @media (max-width: $medium) {
+                width: calc(50vw - 40px);
+                height: auto;
+            }
+
+            @media (max-width: 640px) {
+                width: calc(100vw - 50px);
+                height: auto;
+            }
+        }
+
+
+        .team-member__hover {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+
+        .team-member__text {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 10;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+
+            @media (max-width: 1440px) {
+                bottom: 8px;
+            }
+        }
+    }
+}
+
+.team {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.team .bg-beer {
+    position: absolute;
+    top: 2%;
+    right: -5%;
+    height: 770px;
+    z-index: -10;
+
+    @media (max-width: $large) {
+        right: -15%;
+        height: 600px;
+    }
+
+    @media (max-width: $medium) {
+        right: -20%;
+        height: 420px;
+    }
+
+    @media (max-width: $small) {
+        right: -40%;
+    }
+}

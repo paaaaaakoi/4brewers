@@ -1,0 +1,121 @@
+@import "src/styles/variables.scss";
+
+.slide {
+  position: relative;
+  padding: 55px 143px;
+  border-radius: 5px;
+  color: $white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  @media (max-width: $medium) {
+    padding: 97px 23px;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 22px;
+  }
+
+  .img {
+    @media (max-width: 600px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 77px;
+    margin-bottom: 50px;
+
+    @media (max-width: 600px) {
+      gap: 40px;
+    }
+
+    .desc {
+      max-width: 690px;
+      min-height: 300px;
+
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 40px;
+
+      @media (max-width: 600px) {
+        gap: 20px;
+        min-height: 230px;
+        margin-bottom: 0;
+      }
+      .social-medias {
+        display: flex;
+        gap: 43px;
+      }
+
+      .taste {
+        position: relative;
+      }
+
+      .taste::after {
+        content: "";
+        height: 30px;
+        width: 1px;
+        right: -10px;
+        top: -20%;
+        background-color: $white;
+        position: absolute;
+      }
+    }
+    .props {
+      display: flex;
+      gap: 20px;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 72px;
+
+      position: absolute;
+      bottom: 80px;
+
+      @media (max-width: $medium) {
+        bottom: 110px;
+      }
+
+      @media (max-width: 600px) {
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+      }
+      .arrows {
+        display: flex;
+        gap: 15px;
+
+        img {
+          cursor: pointer;
+        }
+      }
+
+      .points {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        div {
+          border-radius: 50%;
+          background-color: $white;
+          width: 12px;
+          height: 12px;
+        }
+
+        div.active {
+          background-color: $btn;
+        }
+      }
+    }
+  }
+}
